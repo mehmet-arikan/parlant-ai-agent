@@ -103,8 +103,12 @@ echo "✅ Sistem paketleri hazır!"
 
 # PYTHON VERSİYON KONTROLÜ
 echo "🐍 Python versiyonu kontrol ediliyor..."
-PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}' | cut -d. -f1,2)
-if [ "$(echo "$PYTHON_VERSION >= 3.8" | bc -l)" != "1" ]; then
+PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
+PYTHON_MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
+PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
+
+# Python 3.8+ kontrolü (bc olmadan)
+if [ "$PYTHON_MAJOR" -lt 3 ] || [ "$PYTHON_MAJOR" -eq 3 -a "$PYTHON_MINOR" -lt 8 ]; then
     echo "❌ Python 3.8+ gerekli, mevcut versiyon: $PYTHON_VERSION"
     exit 1
 fi
