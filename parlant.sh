@@ -184,7 +184,7 @@ sleep 10
 # Agent oluştur (minimal)
 /opt/parlant/venv/bin/parlant agent create \
     --name "Web Performans Uzmanı" \
-    --description "Web sitesi performans verilerini analiz eder ve sorulara cevap verir."
+    --description "Alarko Carrier web sitesi performans verilerini analiz eder ve sorulara cevap verir."
 
 # Tek kural ekle - JSON handler kullan
 /opt/parlant/venv/bin/parlant guideline create \
