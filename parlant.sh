@@ -1,8 +1,8 @@
-#!/bin/bash
-set -e
-
 # Terminal ayarları - input'u düzelt
 exec < /dev/tty
+
+#!/bin/bash
+set -e
 
 echo "🚀 Parlant JSON Q&A Sistemi Kuruluyor..."
 
