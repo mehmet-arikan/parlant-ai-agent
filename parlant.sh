@@ -8,7 +8,8 @@ get_api_key() {
     while true; do
         echo ""
         echo "🔑 Gemini API anahtarınızı girin:"
-        read -p "API Key: " api_key
+        echo -n "API Key: "
+        read api_key
         
         if [[ -z "$api_key" ]]; then
             echo "❌ API key boş olamaz!"
