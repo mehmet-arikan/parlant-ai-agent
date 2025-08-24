@@ -3,29 +3,6 @@ set -e
 
 echo "🚀 Parlant JSON Q&A Sistemi Kuruluyor..."
 
-# API Key al
-get_api_key() {
-    while true; do
-        echo ""
-        echo "🔑 Gemini API anahtarınızı girin:"
-        echo -n "API Key: "
-        read api_key
-        
-        if [[ -z "$api_key" ]]; then
-            echo "❌ API key boş olamaz!"
-            continue
-        fi
-        
-        if [[ ${#api_key} -lt 20 ]]; then
-            echo "❌ API key çok kısa!"
-            continue
-        fi
-        
-        echo "✅ API key alındı"
-        break
-    done
-}
-
 # Önceki kurulumu temizle
 echo "🧹 Önceki kurulum temizleniyor..."
 sudo systemctl stop parlant 2>/dev/null || true
