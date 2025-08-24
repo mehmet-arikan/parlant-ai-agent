@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Terminal ayarları - input'u düzelt
+exec < /dev/tty
+
 echo "🚀 Parlant JSON Q&A Sistemi Kuruluyor..."
 
 # API Key kontrolü fonksiyonu
